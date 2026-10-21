@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overview — Stackly Student Dashboard</title>
+<link rel="icon" type="image/webp" href="assets/favicon.webp?v=5">
+<link rel="apple-touch-icon" href="assets/favicon.webp?v=5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/pages.css">
+<link rel="stylesheet" href="assets/theme.css?v=23">
+<link rel="stylesheet" href="assets/legal.css?v=1">
+<link rel="stylesheet" href="assets/updates.css?v=1">
+<link rel="stylesheet" href="assets/institute.css?v=3">
+<link rel="stylesheet" href="assets/fixes.css?v=1">
+<script>
+/* Dashboard access guard: only reachable after logging in with the matching role */
+(function(){ var r=null; try{ r=sessionStorage.getItem('stackly_role'); }catch(e){} if(r!=='client') window.location.replace('login.html'); })();
+</script>
+</head>
+<body class="dash-body">
+<div id="preloader" aria-hidden="true"><div class="pl4"><img class="pl4-logo" src="assets/logo-brass.webp?v=5" alt="" width="230" height="67"><div class="pl4-bar"><i></i></div><div class="pl4-row"><span class="pl4-txt">Preparing your classroom</span><b class="pl4-pct">0%</b></div></div></div>
+</div>
+
+<div class="dash-topbar">
+  <a href="dashboard-client.html"><img class="brand-logo" src="assets/logo-brass.webp?v=5" alt="Stackly" width="145" height="42"></a>
+  <button type="button" id="dashMenuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+<div class="dash-scrim" id="dashScrim"></div>
+
+<div class="dash-shell">
+  <aside class="dash-side" id="dashSide">
+    <a class="dash-brand" href="dashboard-client.html"><img class="brand-logo" src="assets/logo-brass.webp?v=5" alt="Stackly" width="145" height="42"></a>
+    <div class="dash-user"><span class="roster-avatar" data-user-initials>JM</span><div><b data-user-name>Jordan M.</b><small data-user-email>jordan@email.com</small><i>Student account</i></div></div>
+    <div class="dash-nav-label">Menu</div>
+    <nav class="dash-nav"><a href="dashboard-client.html" class="active">Overview</a><a href="client-plan.html">Today's Schedule</a><a href="client-activity.html">Course Log &amp; Milestones</a><a href="client-checkins.html">Progress Check-Ins</a><a href="client-usage.html">Usage</a><a href="client-messages.html">Messages</a><a href="client-billing.html">Fees</a></nav>
+    <a class="dash-logout" href="login.html" data-logout>Log out</a>
+  </aside>
+  <main class="dash-main">
+    <div class="dash-pagebar"><span class="pb-dot"></span><b>Overview</b><small>Student Dashboard</small></div>
+    <div class="dash-head">
+      <div>
+        <div class="dash-eyebrow">Overview</div>
+        <h1>Welcome back, <span data-first>Jordan</span>.</h1>
+        <p style="margin-top:6px;">Signed in as <b data-user-email>jordan@email.com</b> · Student & Batch Management — Week 7 of 12</p>
+      </div>
+      <a class="btn btn-solid btn-sm" href="404.html">Log Today's Activity</a>
+    </div>
+    <section class="dash-panel"><h3>Snapshot</h3><div class="dash-cards"><div class="dash-card"><div class="d-num">12</div><div class="d-lbl">Courses Completed</div></div><div class="dash-card"><div class="d-num">3</div><div class="d-lbl">Upcoming Sessions</div></div><div class="dash-card"><div class="d-num">98%</div><div class="d-lbl">Reminders Answered</div></div><div class="dash-card"><div class="d-num">92%</div><div class="d-lbl">Course Health</div></div></div></section><section class="dash-panel"><h3>Course progress — this course cycle</h3><div class="dash-bars"><div class="b" style="height:38%"></div><div class="b" style="height:44%"></div><div class="b" style="height:41%"></div><div class="b" style="height:52%"></div><div class="b" style="height:58%"></div><div class="b" style="height:63%"></div><div class="b" style="height:71%"></div></div><div class="dash-bar-labels"><span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span><span>W7</span></div></section><section class="dash-panel"><h3>This week's schedule</h3><table class="dash-table"><thead><tr><th>Day</th><th>Department</th><th>Counselling</th><th>Status</th></tr></thead><tbody><tr><td>Monday</td><td>Counselling</td><td>Ravi Kumar · Data Analytics — first counselling</td><td><span class="dash-pill on">Completed</span></td></tr><tr><td>Tuesday</td><td>Check-up</td><td>Anitha S. · Digital Marketing, lease review</td><td><span class="dash-pill on">Completed</span></td></tr><tr><td>Thursday</td><td>Waiting</td><td>Karthik M. · Web Development, 3 co-counsellor</td><td><span class="dash-pill due">Due Today</span></td></tr><tr><td>Friday</td><td>Registration</td><td>Meena R. · UI/UX Design, review</td><td><span class="dash-pill due">Upcoming</span></td></tr></tbody></table></section><section class="dash-panel"><h3>Course manager feedback — check-ins</h3><table class="dash-table"><thead><tr><th>Date</th><th>Notes</th><th>Course Mentor</th><th>Status</th></tr></thead><tbody><tr><td>Sep 15</td><td>Check-up complete, plan confirmed</td><td>Dr. Marcus Cole</td><td><span class="dash-pill on">Reviewed</span></td></tr><tr><td>Sep 08</td><td>Counselling, course log</td><td>Dr. Marcus Cole</td><td><span class="dash-pill on">Reviewed</span></td></tr><tr><td>Sep 01</td><td>Check-up, report confirmed</td><td>Dr. Marcus Cole</td><td><span class="dash-pill on">Reviewed</span></td></tr></tbody></table></section><section class="dash-panel"><h3>Course goals</h3><div class="prog-list"><div class="prog-row"><div class="pr-top"><b>Complete 12 courses</b><span>11 / 12</span></div><div class="pr-track"><span style="width:94%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Take all medicines</b><span>27 / 28 days</span></div><div class="pr-track"><span style="width:96%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Reach course plan goal</b><span>95%</span></div><div class="pr-track"><span style="width:95%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Weekly counselling goal</b><span>36 / 40</span></div><div class="pr-track"><span style="width:78%"></span></div></div></div></section><section class="dash-panel"><h3>Coming up</h3><ul class="feed"><li><span class="f-dot"></span><div><b>Karthik M. · Web Development, filing</b><small>Today</small></div><em>6:00 PM</em></li><li><span class="f-dot"></span><div><b>Meena R. · UI/UX Design</b><small>Friday</small></div><em>Fri</em></li><li><span class="f-dot"></span><div><b>Resolution check-in due</b><small>Ravi Kumar file</small></div><em>Sat</em></li><li><span class="f-dot"></span><div><b>Monthly course review</b><small>Full course plan review</small></div><em>Sep 28</em></li></ul></section><section class="dash-panel"><h3>Recent milestones</h3><div class="dash-minis"><div class="mini"><img style="object-position:50% 60%" class="mini-img" src="assets/img/edu-graduation.webp" alt="Graduates throwing their caps into the air" loading="lazy"><b>First full resolution</b><p>Risk score down 4 points this course cycle.</p><span>Sep 15</span></div><div class="mini"><img style="object-position:40% 45%" class="mini-img" src="assets/img/edu-medical-training.webp" alt="A trainer guiding students through a hands-on clinical training session" loading="lazy"><b>6-week streak</b><p>Every scheduled course attended.</p><span>Sep 18</span></div><div class="mini"><img style="object-position:35% 50%" class="mini-img" src="assets/img/edu-analytics-dashboard.webp" alt="A dashboard of charts on a monitor with colleagues in the background" loading="lazy"><b>Best check-up yet</b><p>38 students seen — a new best in the last review.</p><span>Sep 08</span></div></div></section>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  var side=document.getElementById('dashSide'), scrim=document.getElementById('dashScrim'), btn=document.getElementById('dashMenuBtn');
+  function set(o){ side.classList.toggle('open',o); scrim.classList.toggle('show',o); }
+  btn.addEventListener('click',function(){ set(!side.classList.contains('open')); });
+  scrim.addEventListener('click',function(){ set(false); });
+  document.querySelectorAll('[data-demo-form]').forEach(function(f){
+    f.addEventListener('submit',function(e){ e.preventDefault(); var b=f.querySelector('button[type=submit]'); b.textContent='Saved ✓'; b.disabled=true; setTimeout(function(){ b.disabled=false; b.textContent=b.getAttribute('data-label')||'Save'; },1800); });
+    var b=f.querySelector('button[type=submit]'); b.setAttribute('data-label',b.textContent);
+  });
+  var em='', nm='';
+  try{ em=sessionStorage.getItem('stackly_email')||''; nm=sessionStorage.getItem('stackly_name')||''; }catch(e){}
+  if(!nm && em){ nm=em.split('@')[0].replace(/[._+\-]+/g,' ').replace(/[0-9]+/g,'').trim().split(/\s+/).filter(Boolean).map(function(w){ return w.charAt(0).toUpperCase()+w.slice(1); }).join(' '); }
+  function fill(sel,v){ document.querySelectorAll(sel).forEach(function(n){ n.textContent=v; }); }
+  if(nm){ var pt=nm.split(' '); fill('[data-first]',pt[0]); fill('[data-user-name]',nm); fill('[data-user-initials]',((pt[0]||'')[0]||'')+((pt[1]||'')[0]||'')); }
+  if(em){ fill('[data-user-email]',em); }
+  if(typeof gsap!=='undefined'){
+    gsap.utils.toArray('.dash-card').forEach(function(c,i){ gsap.fromTo(c,{opacity:0,y:16},{opacity:1,y:0,duration:0.5,delay:i*0.08,ease:'power2.out'}); });
+    gsap.fromTo('.dash-bars .b',{scaleY:0},{scaleY:1,transformOrigin:'bottom',duration:0.8,stagger:0.06,ease:'power3.out',delay:0.2});
+    gsap.utils.toArray('.dash-panel').forEach(function(p,i){ gsap.fromTo(p,{opacity:0,y:20},{opacity:1,y:0,duration:0.6,delay:0.15+i*0.06,ease:'power2.out'}); });
+  }
+})();
+</script>
+<script src="assets/institute.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Stackly</title>
+<link rel="icon" type="image/webp" href="assets/favicon.webp?v=5">
+<link rel="apple-touch-icon" href="assets/favicon.webp?v=5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/pages.css">
+<link rel="stylesheet" href="assets/theme.css?v=23">
+<link rel="stylesheet" href="assets/legal.css?v=1">
+<link rel="stylesheet" href="assets/updates.css?v=1">
+<link rel="stylesheet" href="assets/institute.css?v=3">
+<link rel="stylesheet" href="assets/fixes.css?v=1">
+<style>@media (max-width:900px){ .nav-links,.nav-right{display:none !important;} .burger{display:flex !important;} }</style>
+<style>
+body.pg-404{padding-top:0!important;background:#fff!important}
+.nf{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;position:relative}
+.nf-left{padding:34px clamp(24px,6vw,96px) 48px;display:flex;flex-direction:column;justify-content:space-between;gap:36px}
+.nf-logo img{height:46px;width:auto;display:block}
+.nf-copy{max-width:560px}
+.nf h1{font-size:clamp(36px,5vw,64px);line-height:1.05;margin:18px 0 18px}
+.nf .lede{font-size:18px;line-height:1.7;color:var(--txt);margin:0 0 30px}
+.nf-actions{display:flex;gap:14px;flex-wrap:wrap}
+.nf-actions .btn{padding:14px 28px;font-size:16px}
+.nf-links{margin-top:44px}
+.nf-links h5{font:700 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.nf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.nf-grid a{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:#fff;text-decoration:none;color:var(--navy);font:700 15px var(--display);transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
+.nf-grid a i{width:40px;height:40px;border-radius:12px;background:var(--p1);color:var(--violet);display:grid;place-items:center;flex:none;transition:background .3s,color .3s}
+.nf-grid a span{flex:1}.nf-grid a em{font-style:normal;color:var(--gold);transition:transform .3s}
+.nf-grid a:hover{transform:translateY(-4px);box-shadow:var(--sh);border-color:var(--gold)}
+.nf-grid a:hover i{background:var(--navy);color:#fff}.nf-grid a:hover em{transform:translateX(5px)}
+.nf-help{font-size:14px;color:var(--muted);margin-top:22px}.nf-help a{color:var(--violet);font-weight:700}
+.nf-right{background:linear-gradient(160deg,var(--navy),var(--navy-2) 60%,#1A4A80);border-radius:0 0 0 120px;position:relative;overflow:hidden;display:grid;place-items:center;min-height:420px}
+.nf-right::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:52px 52px}
+.nf-ring{position:absolute;border-radius:50%;border:1.5px solid rgba(231,194,122,.35)}
+.nf-r1{width:520px;height:520px;animation:inSpin 50s linear infinite;border-style:dashed}.nf-r2{width:380px;height:380px;border-color:rgba(255,255,255,.14)}.nf-r3{width:240px;height:240px;background:radial-gradient(circle,rgba(59,125,216,.35),transparent 70%);border:0}
+.nf-num{position:absolute;font:800 clamp(140px,19vw,260px)/1 var(--display);color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.18);letter-spacing:-.04em;display:flex;gap:.02em;top:10%}
+.nf-num span{display:inline-block;animation:nfRise 1s var(--ease) both}.nf-num span:nth-child(2){animation-delay:.12s}.nf-num span:nth-child(3){animation-delay:.24s}
+.nf-art{position:relative;z-index:2;width:min(320px,62%);filter:drop-shadow(0 30px 40px rgba(0,0,0,.4));animation:inFloat 6s ease-in-out infinite;margin-top:90px}
+.nf-chip{position:absolute;z-index:3;background:#fff;border-radius:12px;padding:10px 16px;font:700 13px var(--display);color:var(--navy);box-shadow:var(--sh-lg);display:flex;align-items:center;gap:8px;animation:inFloat 7s ease-in-out infinite}
+.nf-chip b{width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.nf-c1{left:10%;top:62%}.nf-c2{right:9%;top:30%;animation-delay:1.2s}
+@keyframes nfRise{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+.nf-copy>*{animation:inUp .9s var(--ease) both}.nf-copy>*:nth-child(2){animation-delay:.1s}.nf-copy>*:nth-child(3){animation-delay:.2s}.nf-copy>*:nth-child(4){animation-delay:.3s}
+@media(max-width:900px){.nf{grid-template-columns:1fr}.nf-right{order:-1;border-radius:0 0 60px 60px;min-height:330px}.nf-left{padding-top:28px}.nf-logo{display:none}.nf-grid{grid-template-columns:1fr 1fr}.nf-r1{width:340px;height:340px}.nf-r2{width:250px;height:250px}.nf-art{margin-top:60px;width:200px}.nf-chip{display:none}}
+@media(max-width:480px){.nf-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="pg-404">
+<div id="preloader" aria-hidden="true"><div class="pl4"><img class="pl4-logo" src="assets/logo-brass.webp?v=5" alt="" width="230" height="67"><div class="pl4-bar"><i></i></div><div class="pl4-row"><span class="pl4-txt">Preparing your classroom</span><b class="pl4-pct">0%</b></div></div></div>
+<main class="nf">
+  <div class="nf-left">
+    <a class="nf-logo" href="index.html" aria-label="Stackly home"><img src="assets/logo-brass.webp?v=5" alt="Stackly" width="160" height="46"></a>
+    <div class="nf-copy">
+      <span class="tag">Error 404</span>
+      <h1>This lesson isn't on the <span class="hl">timetable.</span></h1>
+      <p class="lede">The page you're looking for has moved, been renamed, or never existed. Let's get you back to class.</p>
+      <div class="nf-actions"><a class="btn btn-solid" href="index.html">Back to Home</a><a class="btn btn-outline" href="javascript:void(0)" id="goBackBtn">Go Back</a></div>
+      <div class="nf-links">
+        <p class="nf-help">Still stuck? <a href="contact.html">Talk to a counsellor</a> &mdash; we reply the same day.</p>
+      </div>
+    </div>
+    <span></span>
+  </div>
+  <aside class="nf-right" aria-hidden="true">
+    <i class="nf-ring nf-r1"></i><i class="nf-ring nf-r2"></i><i class="nf-ring nf-r3"></i>
+    <div class="nf-num"><span>4</span><span>0</span><span>4</span></div>
+    <svg class="nf-art" viewBox="0 0 320 260" fill="none">
+      <path d="M160 70c-30-22-80-24-120-10v150c40-14 90-12 120 10 30-22 80-24 120-10V60c-40-14-90-12-120 10z" fill="#fff"/>
+      <path d="M160 70v150" stroke="#C9D5E4" stroke-width="3"/>
+      <path d="M62 100c28-6 60-4 82 8M62 126c28-6 60-4 82 8M62 152c28-6 60-4 82 8" stroke="#B8893B" stroke-width="5" stroke-linecap="round"/>
+      <path d="M178 108c22-12 54-14 82-8M178 134c22-12 54-14 82-8" stroke="#DDE5EF" stroke-width="5" stroke-linecap="round"/>
+      <g transform="translate(120 4)"><path d="M40 6L0 26l40 20 40-20z" fill="#E7C27A"/><path d="M14 36v20c0 8 12 14 26 14s26-6 26-14V36l-26 12z" fill="#B8893B"/><path d="M80 26v28" stroke="#E7C27A" stroke-width="4" stroke-linecap="round"/><circle cx="80" cy="58" r="5" fill="#fff"/></g>
+    </svg>
+    <div class="nf-chip nf-c1"><b></b>Lesson not found</div><div class="nf-chip nf-c2"><b></b>Let's get you back</div>
+  </aside>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/site.js"></script>
+<script>
+  document.getElementById('goBackBtn').addEventListener('click', function(){
+    if(window.history.length > 1){ window.history.back(); } else { window.location.href = 'index.html'; }
+  });
+</script>
+<script src="assets/institute.js" defer></script>
+</body>
+</html>

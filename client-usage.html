@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Usage — Stackly Student Dashboard</title>
+<link rel="icon" type="image/webp" href="assets/favicon.webp?v=5">
+<link rel="apple-touch-icon" href="assets/favicon.webp?v=5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/pages.css">
+<link rel="stylesheet" href="assets/theme.css?v=23">
+<link rel="stylesheet" href="assets/legal.css?v=1">
+<link rel="stylesheet" href="assets/updates.css?v=1">
+<link rel="stylesheet" href="assets/institute.css?v=3">
+<link rel="stylesheet" href="assets/fixes.css?v=1">
+<script>
+/* Dashboard access guard: only reachable after logging in with the matching role */
+(function(){ var r=null; try{ r=sessionStorage.getItem('stackly_role'); }catch(e){} if(r!=='client') window.location.replace('login.html'); })();
+</script>
+</head>
+<body class="dash-body">
+<div id="preloader" aria-hidden="true"><div class="pl4"><img class="pl4-logo" src="assets/logo-brass.webp?v=5" alt="" width="230" height="67"><div class="pl4-bar"><i></i></div><div class="pl4-row"><span class="pl4-txt">Preparing your classroom</span><b class="pl4-pct">0%</b></div></div></div>
+</div>
+
+<div class="dash-topbar">
+  <a href="dashboard-client.html"><img class="brand-logo" src="assets/logo-brass.webp?v=5" alt="Stackly" width="145" height="42"></a>
+  <button type="button" id="dashMenuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+<div class="dash-scrim" id="dashScrim"></div>
+
+<div class="dash-shell">
+  <aside class="dash-side" id="dashSide">
+    <a class="dash-brand" href="dashboard-client.html"><img class="brand-logo" src="assets/logo-brass.webp?v=5" alt="Stackly" width="145" height="42"></a>
+    <div class="dash-user"><span class="roster-avatar" data-user-initials>JM</span><div><b data-user-name>Jordan M.</b><small data-user-email>jordan@email.com</small><i>Student account</i></div></div>
+    <div class="dash-nav-label">Menu</div>
+    <nav class="dash-nav"><a href="dashboard-client.html">Overview</a><a href="client-plan.html">Today's Schedule</a><a href="client-activity.html">Course Log &amp; Milestones</a><a href="client-checkins.html">Progress Check-Ins</a><a href="client-usage.html" class="active">Usage</a><a href="client-messages.html">Messages</a><a href="client-billing.html">Fees</a></nav>
+    <a class="dash-logout" href="login.html" data-logout>Log out</a>
+  </aside>
+  <main class="dash-main">
+    <div class="dash-pagebar"><span class="pb-dot"></span><b>Usage</b><small>Student Dashboard</small></div>
+    <div class="dash-head">
+      <div>
+        <h1>Usage</h1>
+        <p style="margin-top:6px;">Slot and room usage — built around your institute, not guesswork</p>
+      </div>
+      <a class="btn btn-solid btn-sm" href="404.html">Log Usage Change</a>
+    </div>
+    <section class="dash-panel"><h3>Slot targets</h3><div class="dash-cards"><div class="dash-card"><div class="d-num">2,850</div><div class="d-lbl">Student Records</div></div><div class="dash-card"><div class="d-num">190</div><div class="d-lbl">Slots Reserved</div></div><div class="dash-card"><div class="d-num">310</div><div class="d-lbl">Active Integrations</div></div><div class="dash-card"><div class="d-num">80</div><div class="d-lbl">Slot Alert Threshold</div></div></div></section><section class="dash-panel"><h3>Today's usage levels</h3><div class="prog-list"><div class="prog-row"><div class="pr-top"><b>Student Records</b><span>2,140 / 2,850</span></div><div class="pr-track"><span style="width:75%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Slots Reserved</b><span>142 / 190 slots</span></div><div class="pr-track"><span style="width:75%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Active Integrations</b><span>220 / 310</span></div><div class="pr-track"><span style="width:71%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Slot Alert Threshold</b><span>54 / 80</span></div><div class="pr-track"><span style="width:68%"></span></div></div></div></section><section class="dash-panel"><h3>Records synced — last 7 days</h3><div class="dash-bars"><div class="b" style="height:88%"></div><div class="b" style="height:92%"></div><div class="b" style="height:79%"></div><div class="b" style="height:95%"></div><div class="b" style="height:90%"></div><div class="b" style="height:84%"></div><div class="b" style="height:75%"></div></div><div class="dash-bar-labels"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div></section><section class="dash-panel"><h3>Usage log — today</h3><table class="dash-table"><thead><tr><th>Feature</th><th>Time</th><th>Added</th><th>Removed</th></tr></thead><tbody><tr><td>Student records, Team A</td><td>7:30 AM</td><td>640</td><td>42</td></tr><tr><td>Course records, Team B</td><td>12:45 PM</td><td>780</td><td>58</td></tr><tr><td>Integration syncs</td><td>4:00 PM</td><td>320</td><td>28</td></tr><tr><td>Archived records</td><td>7:15 PM</td><td>400</td><td>14</td></tr></tbody></table></section><section class="dash-panel"><h3>Daily platform checks</h3><div class="prog-list"><div class="prog-row"><div class="pr-top"><b>API sync check</b><span>2.4 / 3.5 checks</span></div><div class="pr-track"><span style="width:69%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Platform uptime</b><span>7.2 / 8 h</span></div><div class="pr-track"><span style="width:90%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Record syncs</b><span>8,900 / 10,000</span></div><div class="pr-track"><span style="width:89%"></span></div></div></div></section><section class="dash-panel"><h3>Slot management made easy</h3><div class="dash-minis"><div class="mini"><img style="object-position:50% 60%" class="mini-img" src="assets/img/edu-graduation.webp" alt="Graduates throwing their caps into the air" loading="lazy"><b>Front-load onboarding</b><p>Add Monday's new slots early — the rest of the week gets easier.</p><span>Tip 1</span></div><div class="mini"><img style="object-position:40% 45%" class="mini-img" src="assets/img/edu-medical-training.webp" alt="A trainer guiding students through a hands-on clinical training session" loading="lazy"><b>Batch provisioning</b><p>Two provisioning windows on Sunday cover the week.</p><span>Tip 2</span></div><div class="mini"><img style="object-position:35% 50%" class="mini-img" src="assets/img/edu-analytics-dashboard.webp" alt="A dashboard of charts on a monitor with colleagues in the background" loading="lazy"><b>Keep a buffer</b><p>Hold a few reserved slots at all times.</p><span>Tip 3</span></div></div></section><section class="dash-panel"><h3><span id="meal"></span>Notes from Theo Bryant</h3><p class="dash-text">You're running about 48 slots short of reserve most days — mostly by evening. Add a few extra slots at the Monday provisioning window and we'll close the gap without a rush order.</p><p class="dash-text">Recount Monday and Thursday only. We're looking at the trend, not the daily noise.</p></section>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  var side=document.getElementById('dashSide'), scrim=document.getElementById('dashScrim'), btn=document.getElementById('dashMenuBtn');
+  function set(o){ side.classList.toggle('open',o); scrim.classList.toggle('show',o); }
+  btn.addEventListener('click',function(){ set(!side.classList.contains('open')); });
+  scrim.addEventListener('click',function(){ set(false); });
+  document.querySelectorAll('[data-demo-form]').forEach(function(f){
+    f.addEventListener('submit',function(e){ e.preventDefault(); var b=f.querySelector('button[type=submit]'); b.textContent='Saved ✓'; b.disabled=true; setTimeout(function(){ b.disabled=false; b.textContent=b.getAttribute('data-label')||'Save'; },1800); });
+    var b=f.querySelector('button[type=submit]'); b.setAttribute('data-label',b.textContent);
+  });
+  var em='', nm='';
+  try{ em=sessionStorage.getItem('stackly_email')||''; nm=sessionStorage.getItem('stackly_name')||''; }catch(e){}
+  if(!nm && em){ nm=em.split('@')[0].replace(/[._+\-]+/g,' ').replace(/[0-9]+/g,'').trim().split(/\s+/).filter(Boolean).map(function(w){ return w.charAt(0).toUpperCase()+w.slice(1); }).join(' '); }
+  function fill(sel,v){ document.querySelectorAll(sel).forEach(function(n){ n.textContent=v; }); }
+  if(nm){ var pt=nm.split(' '); fill('[data-first]',pt[0]); fill('[data-user-name]',nm); fill('[data-user-initials]',((pt[0]||'')[0]||'')+((pt[1]||'')[0]||'')); }
+  if(em){ fill('[data-user-email]',em); }
+  if(typeof gsap!=='undefined'){
+    gsap.utils.toArray('.dash-card').forEach(function(c,i){ gsap.fromTo(c,{opacity:0,y:16},{opacity:1,y:0,duration:0.5,delay:i*0.08,ease:'power2.out'}); });
+    gsap.fromTo('.dash-bars .b',{scaleY:0},{scaleY:1,transformOrigin:'bottom',duration:0.8,stagger:0.06,ease:'power3.out',delay:0.2});
+    gsap.utils.toArray('.dash-panel').forEach(function(p,i){ gsap.fromTo(p,{opacity:0,y:20},{opacity:1,y:0,duration:0.6,delay:0.15+i*0.06,ease:'power2.out'}); });
+  }
+})();
+</script>
+<script src="assets/institute.js" defer></script>
+</body>
+</html>

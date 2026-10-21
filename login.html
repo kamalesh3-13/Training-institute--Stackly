@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In — Stackly</title>
+<meta name="description" content="Log in to your dashboard.">
+<link rel="icon" type="image/webp" href="assets/favicon.webp?v=5">
+<link rel="apple-touch-icon" href="assets/favicon.webp?v=5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/pages.css">
+<link rel="stylesheet" href="assets/theme.css?v=23">
+<link rel="stylesheet" href="assets/legal.css?v=1">
+<link rel="stylesheet" href="assets/updates.css?v=1">
+<link rel="stylesheet" href="assets/institute.css?v=3">
+<link rel="stylesheet" href="assets/fixes.css?v=1">
+<style>body{padding-top:0}.auth-wrap{min-height:100vh}</style>
+</head>
+<body>
+<div id="preloader" aria-hidden="true"><div class="pl4"><img class="pl4-logo" src="assets/logo-brass.webp?v=5" alt="" width="230" height="67"><div class="pl4-bar"><i></i></div><div class="pl4-row"><span class="pl4-txt">Preparing your classroom</span><b class="pl4-pct">0%</b></div></div></div>
+</div>
+
+<div class="auth-wrap">
+  <div class="auth-side">
+    <div class="auth-photo" aria-hidden="true"><img style="object-position:40% 45%" src="assets/img/edu-library-students.webp" alt="Students reading reference books in a library"></div>
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/logo-brass.webp?v=5" alt="Stackly" width="145" height="42">
+    </a>
+    <div>
+      <div class="a-quote">"Twelve weeks in and our student flow finally runs on time."</div>
+      <div class="a-who">Jordan M. — Student &amp; Course Management, Month 3</div>
+    </div>
+  </div>
+  <div class="auth-form">
+    <div class="auth-form-inner">
+      <a class="back-home" href="index.html"><span aria-hidden="true"><span class="mi mi-arrow_back" aria-hidden="true"></span></span> Back to Home</a>
+      <h1>Welcome back.</h1>
+      <p class="lede">Log in to check your students, log this week's courses, and message your course mentor.</p>
+      <div class="f-field">
+        <label for="dashSelect">Sign in to</label>
+        <select id="dashSelect">
+          <option value="client">Student Dashboard</option>
+          <option value="manager">Trainer Dashboard</option>
+        </select>
+      </div>
+      <form data-login-form>
+        <div class="f-field"><label>Email</label><input type="email" placeholder="you@email.com" required></div>
+        <div class="f-field"><label>Password</label><input type="password" placeholder="••••••••" required></div>
+        <div class="auth-check">
+          <label style="display:flex; align-items:center; gap:8px;"><input type="checkbox" style="width:auto;"> Remember me</label>
+          <a href="404.html" style="margin-left:auto; font-weight:800; color:var(--ember-deep);">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-solid" style="width:100%;">Log In</button>
+      </form>
+      <div class="auth-foot">New to Stackly? <a href="signup.html">Create an account</a></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/site.js"></script>
+<script>
+/* The "Sign in to" selection decides which dashboard the login form sends you to */
+(function(){
+  var select = document.getElementById('dashSelect');
+  var form = document.querySelector('[data-login-form]');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Logging In…';
+    btn.disabled = true;
+    if(typeof gsap !== 'undefined'){
+      gsap.to('.auth-form-inner', {opacity:0, y:-14, duration:0.35, ease:'power2.in', onComplete:goToDashboard});
+    } else {
+      setTimeout(goToDashboard, 300);
+    }
+    function goToDashboard(){
+      try{ sessionStorage.setItem('stackly_role', select.value); sessionStorage.setItem('stackly_email', form.querySelector('input[type="email"]').value.trim()); sessionStorage.removeItem('stackly_name'); }catch(e){}
+      window.location.href = select.value === 'manager' ? 'dashboard-manager.html' : 'dashboard-client.html';
+    }
+  });
+})();
+</script>
+<script src="assets/institute.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Students — Stackly Trainer Dashboard</title>
+<link rel="icon" type="image/webp" href="assets/favicon.webp?v=5">
+<link rel="apple-touch-icon" href="assets/favicon.webp?v=5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/pages.css">
+<link rel="stylesheet" href="assets/theme.css?v=23">
+<link rel="stylesheet" href="assets/legal.css?v=1">
+<link rel="stylesheet" href="assets/updates.css?v=1">
+<link rel="stylesheet" href="assets/institute.css?v=3">
+<link rel="stylesheet" href="assets/fixes.css?v=1">
+<script>
+/* Dashboard access guard: only reachable after logging in with the matching role */
+(function(){ var r=null; try{ r=sessionStorage.getItem('stackly_role'); }catch(e){} if(r!=='manager') window.location.replace('login.html'); })();
+</script>
+</head>
+<body class="dash-body">
+<div id="preloader" aria-hidden="true"><div class="pl4"><img class="pl4-logo" src="assets/logo-brass.webp?v=5" alt="" width="230" height="67"><div class="pl4-bar"><i></i></div><div class="pl4-row"><span class="pl4-txt">Preparing your classroom</span><b class="pl4-pct">0%</b></div></div></div>
+</div>
+
+<div class="dash-topbar">
+  <a href="dashboard-manager.html"><img class="brand-logo" src="assets/logo-brass.webp?v=5" alt="Stackly" width="145" height="42"></a>
+  <button type="button" id="dashMenuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+<div class="dash-scrim" id="dashScrim"></div>
+
+<div class="dash-shell">
+  <aside class="dash-side" id="dashSide">
+    <a class="dash-brand" href="dashboard-manager.html"><img class="brand-logo" src="assets/logo-brass.webp?v=5" alt="Stackly" width="145" height="42"></a>
+    <div class="dash-user"><span class="roster-avatar" data-user-initials>CM</span><div><b data-user-name>Course Mentor Marcus</b><small data-user-email>marcus@stackly.com</small><i>Course Mentor account</i></div></div>
+    <div class="dash-nav-label">Menu</div>
+    <nav class="dash-nav"><a href="dashboard-manager.html">Overview</a><a href="manager-clients.html" class="active">My Students</a><a href="manager-approvals.html">Counselling Approvals</a><a href="manager-messages.html">Messages</a><a href="manager-planning.html">Planning</a><a href="manager-payouts.html">Earnings</a><a href="manager-settings.html">Settings</a></nav>
+    <a class="dash-logout" href="login.html" data-logout>Log out</a>
+  </aside>
+  <main class="dash-main">
+    <div class="dash-pagebar"><span class="pb-dot"></span><b>My Students</b><small>Trainer Dashboard</small></div>
+    <div class="dash-head">
+      <div>
+        <h1>My Students</h1>
+        <p style="margin-top:6px;">Everyone under your care, at a glance</p>
+      </div>
+      <a class="btn btn-solid btn-sm" href="404.html">Invite a Student</a>
+    </div>
+    <section class="dash-panel"><h3>Snapshot</h3><div class="dash-cards"><div class="dash-card"><div class="d-num">24</div><div class="d-lbl">Active Students</div></div><div class="dash-card"><div class="d-num">3</div><div class="d-lbl">New This Month</div></div><div class="dash-card"><div class="d-num">91%</div><div class="d-lbl">Avg Course Score</div></div><div class="dash-card"><div class="d-num">2</div><div class="d-lbl">At Risk</div></div></div></section><section class="dash-panel"><h3>Roster</h3><table class="dash-table dash-roster"><thead><tr><th>Student</th><th>Plan</th><th>Week</th><th>Course Score</th></tr></thead><tbody><tr><td><div class="roster-name"><span class="roster-avatar has-photo" style="background-image:url(assets/img/avatar-jm.webp)">JM</span>Jordan M.</div></td><td>Student &amp; Course Management</td><td>7 / 12</td><td><span class="compliance-bar"><span style="width:92%"></span></span>92%</td></tr><tr><td><div class="roster-name"><span class="roster-avatar has-photo" style="background-image:url(assets/img/avatar-ps.webp)">PS</span>Priya S.</div></td><td>Deadlines &amp; Reminders</td><td>4 / 12</td><td><span class="compliance-bar"><span style="width:96%"></span></span>96%</td></tr><tr><td><div class="roster-name"><span class="roster-avatar has-photo" style="background-image:url(assets/img/avatar-ar.webp)">AR</span>Alex R.</div></td><td>Institute Growth &amp; Fees</td><td>9 / 12</td><td><span class="compliance-bar"><span style="width:78%"></span></span>78%</td></tr><tr><td><div class="roster-name"><span class="roster-avatar has-photo" style="background-image:url(assets/img/avatar-sk.webp)">SK</span>Sam K.</div></td><td>Student &amp; Course Management</td><td>2 / 12</td><td><span class="compliance-bar"><span style="width:88%"></span></span>88%</td></tr><tr><td><div class="roster-name"><span class="roster-avatar has-photo" style="background-image:url(assets/img/avatar-dw.webp)">DW</span>Dana W.</div></td><td>Deadlines &amp; Reminders</td><td>6 / 12</td><td><span class="compliance-bar"><span style="width:94%"></span></span>98%</td></tr><tr><td><div class="roster-name"><span class="roster-avatar has-photo" style="background-image:url(assets/img/avatar-mt.webp)">MT</span>Marcus T.</div></td><td>Student &amp; Course Management</td><td>10 / 12</td><td><span class="compliance-bar"><span style="width:85%"></span></span>85%</td></tr><tr><td><div class="roster-name"><span class="roster-avatar has-photo" style="background-image:url(assets/img/avatar-el.webp)">EL</span>Erin L.</div></td><td>Institute Growth &amp; Fees</td><td>3 / 12</td><td><span class="compliance-bar"><span style="width:97%"></span></span>97%</td></tr></tbody></table></section><section class="dash-panel"><h3>Course score by student</h3><div class="prog-list"><div class="prog-row"><div class="pr-top"><b>Jordan M.</b><span>92%</span></div><div class="pr-track"><span style="width:92%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Priya S.</b><span>96%</span></div><div class="pr-track"><span style="width:96%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Alex R.</b><span>78%</span></div><div class="pr-track"><span style="width:78%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Sam K.</b><span>88%</span></div><div class="pr-track"><span style="width:88%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Dana W.</b><span>98%</span></div><div class="pr-track"><span style="width:94%"></span></div></div></div></section><section class="dash-panel"><h3>Plan split</h3><div class="dash-minis"><div class="mini"><img style="object-position:50% 60%" class="mini-img" src="assets/img/edu-graduation.webp" alt="Graduates throwing their caps into the air" loading="lazy"><b>Student &amp; Course Management</b><p>Core student-flow fundamentals.</p><span>12 students</span></div><div class="mini"><img style="object-position:40% 45%" class="mini-img" src="assets/img/edu-medical-training.webp" alt="A trainer guiding students through a hands-on clinical training session" loading="lazy"><b>Deadlines &amp; Reminders</b><p>Training-area sequencing.</p><span>8 students</span></div><div class="mini"><img style="object-position:35% 50%" class="mini-img" src="assets/img/edu-analytics-dashboard.webp" alt="A dashboard of charts on a monitor with colleagues in the background" loading="lazy"><b>Institute Growth &amp; Fees</b><p>Cost plus forecast tuning.</p><span>4 students</span></div></div></section><section class="dash-panel"><h3>Recent milestones</h3><ul class="feed"><li><span class="f-dot"></span><div><b>Jordan M. — ₹48K bill</b><small>Largest single bill this course cycle</small></div><em>Sep 15</em></li><li><span class="f-dot"></span><div><b>Priya S. — 12-day resolution review, new best time</b><small>Fastest resolution on this plan</small></div><em>Sep 14</em></li><li><span class="f-dot"></span><div><b>Erin L. — ₹34K course strategy</b><small>First time over 2× the standard plan size</small></div><em>Sep 12</em></li></ul></section><section class="dash-panel"><h3>At-risk students</h3><table class="dash-table"><thead><tr><th>Student</th><th>Reason</th><th>Last Session</th><th>Action</th></tr></thead><tbody><tr><td>Alex R.</td><td>Missed 2 sessions</td><td>6 days ago</td><td><span class="dash-pill due">Check In</span></td></tr><tr><td>Marcus T.</td><td>Team short-staffed</td><td>2 days ago</td><td><span class="dash-pill due">Adjust Plan</span></td></tr></tbody></table></section><section class="dash-panel"><h3><span id="invite"></span>Invite a student</h3><form class="dash-form" data-demo-form data-redirect-404><div class="df-grid"><div class="f-field "><label>Name</label><input type="text" placeholder="Student name" required minlength="2" maxlength="60"></div><div class="f-field "><label>Email</label><input type="email" placeholder="student@email.com" required></div><div class="f-field "><label>Plan</label><select><option>Student &amp; Course Management</option><option>Deadlines &amp; Reminders</option><option>Institute Growth &amp; Fees</option></select></div></div><button type="submit" class="btn btn-solid btn-sm">Send Invite</button></form></section>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  var side=document.getElementById('dashSide'), scrim=document.getElementById('dashScrim'), btn=document.getElementById('dashMenuBtn');
+  function set(o){ side.classList.toggle('open',o); scrim.classList.toggle('show',o); }
+  btn.addEventListener('click',function(){ set(!side.classList.contains('open')); });
+  scrim.addEventListener('click',function(){ set(false); });
+  document.querySelectorAll('[data-demo-form]').forEach(function(f){
+    f.addEventListener('submit',function(e){ e.preventDefault(); var b=f.querySelector('button[type=submit]'); b.textContent='Saved ✓'; b.disabled=true; setTimeout(function(){ b.disabled=false; b.textContent=b.getAttribute('data-label')||'Save'; },1800); });
+    var b=f.querySelector('button[type=submit]'); b.setAttribute('data-label',b.textContent);
+  });
+  var em='', nm='';
+  try{ em=sessionStorage.getItem('stackly_email')||''; nm=sessionStorage.getItem('stackly_name')||''; }catch(e){}
+  if(!nm && em){ nm=em.split('@')[0].replace(/[._+\-]+/g,' ').replace(/[0-9]+/g,'').trim().split(/\s+/).filter(Boolean).map(function(w){ return w.charAt(0).toUpperCase()+w.slice(1); }).join(' '); }
+  function fill(sel,v){ document.querySelectorAll(sel).forEach(function(n){ n.textContent=v; }); }
+  if(nm){ var pt=nm.split(' '); fill('[data-first]',pt[0]); fill('[data-user-name]',nm); fill('[data-user-initials]',((pt[0]||'')[0]||'')+((pt[1]||'')[0]||'')); }
+  if(em){ fill('[data-user-email]',em); }
+  if(typeof gsap!=='undefined'){
+    gsap.utils.toArray('.dash-card').forEach(function(c,i){ gsap.fromTo(c,{opacity:0,y:16},{opacity:1,y:0,duration:0.5,delay:i*0.08,ease:'power2.out'}); });
+    gsap.fromTo('.dash-bars .b',{scaleY:0},{scaleY:1,transformOrigin:'bottom',duration:0.8,stagger:0.06,ease:'power3.out',delay:0.2});
+    gsap.utils.toArray('.dash-panel').forEach(function(p,i){ gsap.fromTo(p,{opacity:0,y:20},{opacity:1,y:0,duration:0.6,delay:0.15+i*0.06,ease:'power2.out'}); });
+  }
+})();
+</script>
+<script src="assets/institute.js" defer></script>
+</body>
+</html>

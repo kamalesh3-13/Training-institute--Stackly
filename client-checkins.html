@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progress Check-Ins — Stackly Student Dashboard</title>
+<link rel="icon" type="image/webp" href="assets/favicon.webp?v=5">
+<link rel="apple-touch-icon" href="assets/favicon.webp?v=5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/pages.css">
+<link rel="stylesheet" href="assets/theme.css?v=23">
+<link rel="stylesheet" href="assets/legal.css?v=1">
+<link rel="stylesheet" href="assets/updates.css?v=1">
+<link rel="stylesheet" href="assets/institute.css?v=3">
+<link rel="stylesheet" href="assets/fixes.css?v=1">
+<script>
+/* Dashboard access guard: only reachable after logging in with the matching role */
+(function(){ var r=null; try{ r=sessionStorage.getItem('stackly_role'); }catch(e){} if(r!=='client') window.location.replace('login.html'); })();
+</script>
+</head>
+<body class="dash-body">
+<div id="preloader" aria-hidden="true"><div class="pl4"><img class="pl4-logo" src="assets/logo-brass.webp?v=5" alt="" width="230" height="67"><div class="pl4-bar"><i></i></div><div class="pl4-row"><span class="pl4-txt">Preparing your classroom</span><b class="pl4-pct">0%</b></div></div></div>
+</div>
+
+<div class="dash-topbar">
+  <a href="dashboard-client.html"><img class="brand-logo" src="assets/logo-brass.webp?v=5" alt="Stackly" width="145" height="42"></a>
+  <button type="button" id="dashMenuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+<div class="dash-scrim" id="dashScrim"></div>
+
+<div class="dash-shell">
+  <aside class="dash-side" id="dashSide">
+    <a class="dash-brand" href="dashboard-client.html"><img class="brand-logo" src="assets/logo-brass.webp?v=5" alt="Stackly" width="145" height="42"></a>
+    <div class="dash-user"><span class="roster-avatar" data-user-initials>JM</span><div><b data-user-name>Jordan M.</b><small data-user-email>jordan@email.com</small><i>Student account</i></div></div>
+    <div class="dash-nav-label">Menu</div>
+    <nav class="dash-nav"><a href="dashboard-client.html">Overview</a><a href="client-plan.html">Today's Schedule</a><a href="client-activity.html">Course Log &amp; Milestones</a><a href="client-checkins.html" class="active">Progress Check-Ins</a><a href="client-usage.html">Usage</a><a href="client-messages.html">Messages</a><a href="client-billing.html">Fees</a></nav>
+    <a class="dash-logout" href="login.html" data-logout>Log out</a>
+  </aside>
+  <main class="dash-main">
+    <div class="dash-pagebar"><span class="pb-dot"></span><b>Progress Check-Ins</b><small>Student Dashboard</small></div>
+    <div class="dash-head">
+      <div>
+        <h1>Progress Check-Ins</h1>
+        <p style="margin-top:6px;">Submit one confirmation per completed course — your course mentor replies within 24 hours</p>
+      </div>
+      <a class="btn btn-solid btn-sm" href="404.html">Upload a Confirmation</a>
+    </div>
+    <section class="dash-panel"><h3>Snapshot</h3><div class="dash-cards"><div class="dash-card"><div class="d-num">12</div><div class="d-lbl">Confirmations Submitted</div></div><div class="dash-card"><div class="d-num">11</div><div class="d-lbl">Reviewed</div></div><div class="dash-card"><div class="d-num">18h</div><div class="d-lbl">Avg Turnaround</div></div><div class="dash-card"><div class="d-num">1</div><div class="d-lbl">Awaiting Review</div></div></div></section><section class="dash-panel"><h3><span id="upload"></span>Upload a check-in</h3><form class="dash-form" data-demo-form data-redirect-404><div class="df-grid"><div class="f-field "><label>Course Type</label><select><option>New Student</option><option>Follow-up</option><option>Referral</option><option>Referral</option></select></div><div class="f-field "><label>Confirmation Type</label><select><option>Signed engagement letter</option><option>Email confirmation</option><option>Verbal confirmation</option></select></div><div class="f-field "><label>Confirmation Document</label><div class="drop">Drag a document or scan here or tap to browse<small>PDF, DOCX or image · up to 25 MB</small></div></div><div class="f-field "><label>Note for your course mentor</label><textarea rows="3" placeholder="Anything you want me to flag?" required minlength="10" maxlength="1000"></textarea></div></div><button type="submit" class="btn btn-solid btn-sm">Submit Confirmation</button></form></section><section class="dash-panel"><h3>Check-in history</h3><table class="dash-table"><thead><tr><th>Date</th><th>Confirmation</th><th>Course Mentor</th><th>Status</th></tr></thead><tbody><tr><td>Sep 19</td><td>Co-counsellor, email confirmation</td><td>Dr. Marcus Cole</td><td><span class="dash-pill due">Awaiting</span></td></tr><tr><td>Sep 15</td><td>New Student, signed engagement letter</td><td>Dr. Marcus Cole</td><td><span class="dash-pill on">Reviewed</span></td></tr><tr><td>Sep 08</td><td>Co-counsellor, verbal confirmation</td><td>Dr. Marcus Cole</td><td><span class="dash-pill on">Reviewed</span></td></tr><tr><td>Sep 01</td><td>Follow-up, signed engagement letter</td><td>Dr. Marcus Cole</td><td><span class="dash-pill on">Reviewed</span></td></tr></tbody></table></section><section class="dash-panel"><h3>Latest feedback from Course Mentor Marcus</h3><ul class="feed"><li><span class="f-dot"></span><div><b>New Student — Sep 15</b><small>Great doc — signature and date both clear.</small></div><em>Marcus</em></li><li><span class="f-dot"></span><div><b>Co-counsellor Course — Sep 08</b><small>Verbal confirmation logged, all terms in range.</small></div><em>Marcus</em></li><li><span class="f-dot"></span><div><b>Follow-up — Sep 01</b><small>Signature matched the student on file, all set.</small></div><em>Marcus</em></li></ul></section><section class="dash-panel"><h3>Confirmation tips</h3><div class="dash-minis"><div class="mini"><img style="object-position:50% 60%" class="mini-img" src="assets/img/edu-graduation.webp" alt="Graduates throwing their caps into the air" loading="lazy"><b>Get the full page</b><p>Scan the whole signature page, not a crop.</p><span>Document</span></div><div class="mini"><img style="object-position:40% 45%" class="mini-img" src="assets/img/edu-medical-training.webp" alt="A trainer guiding students through a hands-on clinical training session" loading="lazy"><b>Match the student</b><p>Confirm the name before signing off.</p><span>Signature</span></div><div class="mini"><img style="object-position:35% 50%" class="mini-img" src="assets/img/edu-analytics-dashboard.webp" alt="A dashboard of charts on a monitor with colleagues in the background" loading="lazy"><b>Check the details</b><p>Flag anything outside the course strategy.</p><span>Terms</span></div><div class="mini"><img style="object-position:40% 45%" class="mini-img" src="assets/img/edu-library-students.webp" alt="Students reading reference books in a library" loading="lazy"><b>Keep it legible</b><p>Make sure text is sharp and readable.</p><span>Document</span></div></div></section><section class="dash-panel"><h3>Confirmation quality scores</h3><div class="prog-list"><div class="prog-row"><div class="pr-top"><b>New Student</b><span>88 / 100</span></div><div class="pr-track"><span style="width:88%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Follow-up</b><span>82 / 100</span></div><div class="pr-track"><span style="width:82%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Referral</b><span>91 / 100</span></div><div class="pr-track"><span style="width:91%"></span></div></div><div class="prog-row"><div class="pr-top"><b>Referral</b><span>79 / 100</span></div><div class="pr-track"><span style="width:79%"></span></div></div></div></section><section class="dash-panel"><h3>Document checklist</h3><ul class="checklist"><li class="done"><span></span>Include every signature page</li><li class="done"><span></span>Get the course name and date in view</li><li class="done"><span></span>One clean scan — no blur</li><li class=""><span></span>Good contrast, fully legible</li><li class=""><span></span>Note any redlines or discrepancies</li></ul></section>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  var side=document.getElementById('dashSide'), scrim=document.getElementById('dashScrim'), btn=document.getElementById('dashMenuBtn');
+  function set(o){ side.classList.toggle('open',o); scrim.classList.toggle('show',o); }
+  btn.addEventListener('click',function(){ set(!side.classList.contains('open')); });
+  scrim.addEventListener('click',function(){ set(false); });
+  document.querySelectorAll('[data-demo-form]').forEach(function(f){
+    f.addEventListener('submit',function(e){ e.preventDefault(); var b=f.querySelector('button[type=submit]'); b.textContent='Saved ✓'; b.disabled=true; setTimeout(function(){ b.disabled=false; b.textContent=b.getAttribute('data-label')||'Save'; },1800); });
+    var b=f.querySelector('button[type=submit]'); b.setAttribute('data-label',b.textContent);
+  });
+  var em='', nm='';
+  try{ em=sessionStorage.getItem('stackly_email')||''; nm=sessionStorage.getItem('stackly_name')||''; }catch(e){}
+  if(!nm && em){ nm=em.split('@')[0].replace(/[._+\-]+/g,' ').replace(/[0-9]+/g,'').trim().split(/\s+/).filter(Boolean).map(function(w){ return w.charAt(0).toUpperCase()+w.slice(1); }).join(' '); }
+  function fill(sel,v){ document.querySelectorAll(sel).forEach(function(n){ n.textContent=v; }); }
+  if(nm){ var pt=nm.split(' '); fill('[data-first]',pt[0]); fill('[data-user-name]',nm); fill('[data-user-initials]',((pt[0]||'')[0]||'')+((pt[1]||'')[0]||'')); }
+  if(em){ fill('[data-user-email]',em); }
+  if(typeof gsap!=='undefined'){
+    gsap.utils.toArray('.dash-card').forEach(function(c,i){ gsap.fromTo(c,{opacity:0,y:16},{opacity:1,y:0,duration:0.5,delay:i*0.08,ease:'power2.out'}); });
+    gsap.fromTo('.dash-bars .b',{scaleY:0},{scaleY:1,transformOrigin:'bottom',duration:0.8,stagger:0.06,ease:'power3.out',delay:0.2});
+    gsap.utils.toArray('.dash-panel').forEach(function(p,i){ gsap.fromTo(p,{opacity:0,y:20},{opacity:1,y:0,duration:0.6,delay:0.15+i*0.06,ease:'power2.out'}); });
+  }
+})();
+</script>
+<script src="assets/institute.js" defer></script>
+</body>
+</html>

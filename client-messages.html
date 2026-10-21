@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Messages — Stackly Student Dashboard</title>
+<link rel="icon" type="image/webp" href="assets/favicon.webp?v=5">
+<link rel="apple-touch-icon" href="assets/favicon.webp?v=5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/pages.css">
+<link rel="stylesheet" href="assets/theme.css?v=23">
+<link rel="stylesheet" href="assets/legal.css?v=1">
+<link rel="stylesheet" href="assets/updates.css?v=1">
+<link rel="stylesheet" href="assets/institute.css?v=3">
+<link rel="stylesheet" href="assets/fixes.css?v=1">
+<script>
+/* Dashboard access guard: only reachable after logging in with the matching role */
+(function(){ var r=null; try{ r=sessionStorage.getItem('stackly_role'); }catch(e){} if(r!=='client') window.location.replace('login.html'); })();
+</script>
+</head>
+<body class="dash-body">
+<div id="preloader" aria-hidden="true"><div class="pl4"><img class="pl4-logo" src="assets/logo-brass.webp?v=5" alt="" width="230" height="67"><div class="pl4-bar"><i></i></div><div class="pl4-row"><span class="pl4-txt">Preparing your classroom</span><b class="pl4-pct">0%</b></div></div></div>
+</div>
+
+<div class="dash-topbar">
+  <a href="dashboard-client.html"><img class="brand-logo" src="assets/logo-brass.webp?v=5" alt="Stackly" width="145" height="42"></a>
+  <button type="button" id="dashMenuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+<div class="dash-scrim" id="dashScrim"></div>
+
+<div class="dash-shell">
+  <aside class="dash-side" id="dashSide">
+    <a class="dash-brand" href="dashboard-client.html"><img class="brand-logo" src="assets/logo-brass.webp?v=5" alt="Stackly" width="145" height="42"></a>
+    <div class="dash-user"><span class="roster-avatar" data-user-initials>JM</span><div><b data-user-name>Jordan M.</b><small data-user-email>jordan@email.com</small><i>Student account</i></div></div>
+    <div class="dash-nav-label">Menu</div>
+    <nav class="dash-nav"><a href="dashboard-client.html">Overview</a><a href="client-plan.html">Today's Schedule</a><a href="client-activity.html">Course Log &amp; Milestones</a><a href="client-checkins.html">Progress Check-Ins</a><a href="client-usage.html">Usage</a><a href="client-messages.html" class="active">Messages</a><a href="client-billing.html">Fees</a></nav>
+    <a class="dash-logout" href="login.html" data-logout>Log out</a>
+  </aside>
+  <main class="dash-main">
+    <div class="dash-pagebar"><span class="pb-dot"></span><b>Messages</b><small>Student Dashboard</small></div>
+    <div class="dash-head">
+      <div>
+        <h1>Messages</h1>
+        <p style="margin-top:6px;">Your course management team, one thread away</p>
+      </div>
+      <a class="btn btn-solid btn-sm" href="404.html">New Message</a>
+    </div>
+    <section class="dash-panel"><h3>Snapshot</h3><div class="dash-cards"><div class="dash-card"><div class="d-num">2</div><div class="d-lbl">Unread</div></div><div class="dash-card"><div class="d-num">3h</div><div class="d-lbl">Avg Course Mentor Reply</div></div><div class="dash-card"><div class="d-num">4</div><div class="d-lbl">Active Threads</div></div><div class="dash-card"><div class="d-num">6</div><div class="d-lbl">Files Shared</div></div></div></section><section class="dash-panel"><h3>Conversation with Course Mentor Marcus</h3><div class="chat"><div class="bubble "><small>Marcus · Sep 15, 6:12 PM</small><p>Great confirmation on the Karthik M. · Web Development course. Loop in co-counsellor a little earlier next time and the handoff will go faster.</p></div><div class="bubble me"><small>You · Sep 15, 7:40 PM</small><p>Got it. Should I confirm the Fieldstone course Thursday?</p></div><div class="bubble "><small>Marcus · Sep 15, 8:05 PM</small><p>No — keep it at ₹48K for the three co-counsellor. If the first meeting runs slow, hold there and let the team know.</p></div></div></section><section class="dash-panel"><h3><span id="compose"></span>Send a message</h3><form class="dash-form" data-demo-form data-redirect-404><div class="df-grid"><div class="f-field "><label>To</label><select><option>Course Mentor Marcus</option><option>Theo Bryant (Data &amp; Compliance)</option><option>Priya Nair (Onboarding)</option></select></div><div class="f-field "><label>Subject</label><input type="text" placeholder="Quick question" required minlength="3" maxlength="80"></div><div class="f-field "><label>Message</label><textarea rows="3" placeholder="Write your message…" required minlength="10" maxlength="1000"></textarea></div></div><button type="submit" class="btn btn-solid btn-sm">Send Message</button></form></section><section class="dash-panel"><h3>Your course management team</h3><div class="dash-minis"><div class="mini"><img style="object-position:50% 60%" class="mini-img" src="assets/img/edu-graduation.webp" alt="Graduates throwing their caps into the air" loading="lazy"><b>Dr. Marcus Cole</b><p>Head course mentor — planning and student flow.</p><span>Student Flow</span></div><div class="mini"><img style="object-position:40% 45%" class="mini-img" src="assets/img/edu-medical-training.webp" alt="A trainer guiding students through a hands-on clinical training session" loading="lazy"><b>Theo Bryant</b><p>Usage and data compliance.</p><span>Usage</span></div><div class="mini"><img style="object-position:35% 50%" class="mini-img" src="assets/img/edu-analytics-dashboard.webp" alt="A dashboard of charts on a monitor with colleagues in the background" loading="lazy"><b>Priya Nair</b><p>Onboarding and adoption.</p><span>Registration</span></div></div></section><section class="dash-panel"><h3>Shared files</h3><table class="dash-table"><thead><tr><th>File</th><th>From</th><th>Date</th><th>Type</th></tr></thead><tbody><tr><td>Week 7 plan.pdf</td><td>Dr. Marcus Cole</td><td>Sep 15</td><td>PDF</td></tr><tr><td>Data compliance checklist.pdf</td><td>Theo Bryant</td><td>Sep 12</td><td>PDF</td></tr><tr><td>Onboarding roadmap.pdf</td><td>Priya Nair</td><td>Sep 06</td><td>PDF</td></tr></tbody></table></section><section class="dash-panel"><h3>Announcements</h3><ul class="feed"><li><span class="f-dot"></span><div><b>Student-flow review week starts Sep 28</b><small>Book your audit slot with your course mentor.</small></div><em>New</em></li><li><span class="f-dot"></span><div><b>Holiday hours</b><small>Course Mentors reply within 48h on public holidays.</small></div><em>Sep 10</em></li><li><span class="f-dot"></span><div><b>New course-guide library</b><small>Updated guides for check-ups, course strategys and registration.</small></div><em>Sep 02</em></li></ul></section><section class="dash-panel"><h3>Quick answers</h3><div class="dash-minis"><div class="mini"><img style="object-position:40% 45%" class="mini-img" src="assets/img/edu-library-students.webp" alt="Students reading reference books in a library" loading="lazy"><b>Can I swap a course step?</b><p>Yes — message your course mentor and we'll adjust the plan.</p></div><div class="mini"><img style="object-position:70% 40%" class="mini-img" src="assets/img/edu-presenter.webp" alt="A trainer presenting to a student in a classroom" loading="lazy"><b>Missed a follow-up?</b><p>Skip it and follow up the next day. No double-messaging.</p></div><div class="mini"><img style="object-position:40% 45%" class="mini-img" src="assets/img/edu-exam-hall.webp" alt="Students studying at individual desks in a hall" loading="lazy"><b>Team short-staffed?</b><p>Tell us your capacity and we'll rewrite the week.</p></div></div></section>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  var side=document.getElementById('dashSide'), scrim=document.getElementById('dashScrim'), btn=document.getElementById('dashMenuBtn');
+  function set(o){ side.classList.toggle('open',o); scrim.classList.toggle('show',o); }
+  btn.addEventListener('click',function(){ set(!side.classList.contains('open')); });
+  scrim.addEventListener('click',function(){ set(false); });
+  document.querySelectorAll('[data-demo-form]').forEach(function(f){
+    f.addEventListener('submit',function(e){ e.preventDefault(); var b=f.querySelector('button[type=submit]'); b.textContent='Saved ✓'; b.disabled=true; setTimeout(function(){ b.disabled=false; b.textContent=b.getAttribute('data-label')||'Save'; },1800); });
+    var b=f.querySelector('button[type=submit]'); b.setAttribute('data-label',b.textContent);
+  });
+  var em='', nm='';
+  try{ em=sessionStorage.getItem('stackly_email')||''; nm=sessionStorage.getItem('stackly_name')||''; }catch(e){}
+  if(!nm && em){ nm=em.split('@')[0].replace(/[._+\-]+/g,' ').replace(/[0-9]+/g,'').trim().split(/\s+/).filter(Boolean).map(function(w){ return w.charAt(0).toUpperCase()+w.slice(1); }).join(' '); }
+  function fill(sel,v){ document.querySelectorAll(sel).forEach(function(n){ n.textContent=v; }); }
+  if(nm){ var pt=nm.split(' '); fill('[data-first]',pt[0]); fill('[data-user-name]',nm); fill('[data-user-initials]',((pt[0]||'')[0]||'')+((pt[1]||'')[0]||'')); }
+  if(em){ fill('[data-user-email]',em); }
+  if(typeof gsap!=='undefined'){
+    gsap.utils.toArray('.dash-card').forEach(function(c,i){ gsap.fromTo(c,{opacity:0,y:16},{opacity:1,y:0,duration:0.5,delay:i*0.08,ease:'power2.out'}); });
+    gsap.fromTo('.dash-bars .b',{scaleY:0},{scaleY:1,transformOrigin:'bottom',duration:0.8,stagger:0.06,ease:'power3.out',delay:0.2});
+    gsap.utils.toArray('.dash-panel').forEach(function(p,i){ gsap.fromTo(p,{opacity:0,y:20},{opacity:1,y:0,duration:0.6,delay:0.15+i*0.06,ease:'power2.out'}); });
+  }
+})();
+</script>
+<script src="assets/institute.js" defer></script>
+</body>
+</html>
